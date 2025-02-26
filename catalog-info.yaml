@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: inncw4fym-nodejs-gitops
+  description: This is GitOps manifest for inncw4fym-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=inncw4fym-nodejs
+    backstage.io/kubernetes-id: inncw4fym-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: inncw4fym-nodejs-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:inncw4fym-nodejs
